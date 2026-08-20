@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Rodin Pro M';
+    src: url(FOT-Rodin\ Pro\ M.otf);
+}
+
+@font-face {
+    font-family: 'Rodin Pro DB';
+    src: url(FOT-Rodin\ Pro\ DB.otf);
+}
+
+@font-face {
+    font-family: 'Rodin Pro B';
+    src: url(FOT-Rodin\ Pro\ B.otf);
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.appsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 16px;
+    padding: 48px;  
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+
+.appCard {
+    background: #fff;
+    border: 5px solid #b8b8b6;
+    width: auto;
+    height: auto;
+    border-radius: 16px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0px;
+}
+
+.bottomBarContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottomBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    isolation: isolate;
+    gap: 10px;
+    padding-top: 12px;
+    padding-bottom: 24px;
+
+    position: relative;
+    width: 100%;
+    height: 20%;
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+
+    background: #CACCD5;
+    border-top: 2px solid #36BFED;
+    box-shadow: inset 0px 32px 54.4px #AFB0B5;
+}
+
+.buttonLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    width: fit-content;
+    height: 100%;
+}
+
+.containerLeft {
+    display: flex;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    
+    position: relative;
+    width: 13vw;
+    height: 100%;
+
+    background: #d9d9d9;
+    border: 8px solid #bbbec4;
+    box-shadow: 4px 10px 12.7px rgba(0, 0, 0, 0.25), inset 0px -13px 24.4px rgba(0, 0, 0, 0.25), inset 0px 13px 15.4px rgba(0, 0, 0, 0.25);
+    border-left: 0px;
+}
+
+.containerLeft img {
+    position: absolute;
+    right: 0px;
+    top: 45%;
+    transform: translateY(-50%);
+
+    width: auto;
+    height: 100%;
+}
+
+.bottomBarText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+.bottomBarText h1, h2, h3, h4, h5, p {
+    text-align: center;
+    margin: -2px;
+}
+
+.containerRight {
+    display: flex;
+    flex-direction: column-reverse;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    
+    position: relative;
+    width: 13vw;
+    height: 100%;
+
+    background: #d9d9d9;
+    border: 8px solid #bbbec4;
+    box-shadow: 4px 10px 12.7px rgba(0, 0, 0, 0.25), inset 0px -13px 24.4px rgba(0, 0, 0, 0.25), inset 0px 13px 15.4px rgba(0, 0, 0, 0.25);
+    border-right: 0px;
+}
+
+.containerRight img {
+    position: absolute;
+    left: 0px;
+    top: 45%;
+    transform: translateY(-50%);
+
+    width: auto;
+    height: 100%;
+}
