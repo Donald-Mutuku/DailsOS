@@ -18,10 +18,11 @@ html, body {
 
 .container {
     position: relative;
-    width: 80vw;
-    max-height: 85vh;
+    width: 95vmin;
+    max-width: 98vw;
+    max-height: 98vh;
 
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3;
     margin: 0 auto;
 
     background: black;
@@ -38,6 +39,8 @@ html, body {
     object-fit: fill;
     z-index: 10;
     pointer-events: none;
+
+    object-fit: contain;
 }
 
 .screen {
@@ -118,6 +121,10 @@ html, body {
     background-repeat: no-repeat;
 }
 
+.window {
+
+}
+
 .taskbar {
     display: flex;
     flex-direction: row;
@@ -125,7 +132,7 @@ html, body {
     background-color: #D15C91;
     width: 100%;
     height: fit-content;
-    max-height: 5cqi;
+    max-height: 8cqi;
     gap: 0.5cqi;
 
     margin: 0;
@@ -139,14 +146,14 @@ html, body {
     width: fit-content;
     height: 100%;
     box-sizing: border-box;
-    padding: 0.5cqi;
-    gap: 0.5cqi;
+    padding: 0.8cqi;
+    gap: 0.8cqi;
 
     user-select: none;
 }
 
 .taskbarIcons img {
-    width: 2.5cqi;
+    width: 3cqi;
     max-height: 100%;
 }
 
@@ -160,7 +167,7 @@ html, body {
     border-top-right-radius: 16cqi;
     border-bottom-right-radius: 16cqi;
     padding: 0.8cqi;
-    gap: 0.4cqi;
+    gap: 0.8cqi;
     box-sizing: border-box;
     align-items: center;
 
@@ -170,7 +177,7 @@ html, body {
 .startButton p {
     font-family: 'Encode Sans SemiBold';
     text-align: left;
-    font-size: 1.5cqi;
+    font-size: 2cqi;
     margin: 0;
     color: #FFFAFC;
 }
