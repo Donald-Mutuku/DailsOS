@@ -1,167 +1,143 @@
-* {
-    box-sizing: border-box;
-}
-
-@font-face {
-    font-family: 'Rodin Pro M';
-    src: url(FOT-Rodin\ Pro\ M.otf);
-}
-
-@font-face {
-    font-family: 'Rodin Pro DB';
-    src: url(FOT-Rodin\ Pro\ DB.otf);
-}
-
-@font-face {
-    font-family: 'Rodin Pro B';
-    src: url(FOT-Rodin\ Pro\ B.otf);
-}
-
 html, body {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 
     margin: 0;
-    padding: 0;
 
-    overflow: hidden;
-}
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-}
-
-.appsGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 16px;
-    padding: 48px;  
-    width: 100%;
-    height: 100%;
-    flex: 1;
-}
-
-.appCard {
-    background: #fff;
-    border: 5px solid #b8b8b6;
-    width: auto;
-    height: auto;
-    border-radius: 16px;
-}
-
-body {
-    width: 100%;
-    height: 100%;
-
-    margin: 0px;
-}
-
-.bottomBarContainer {
-    display: flex;
-    flex-direction: column;
-}
-
-.bottomBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    isolation: isolate;
-    gap: 10px;
-    padding-top: 12px;
-    padding-bottom: 24px;
-
-    position: relative;
-    width: 100%;
-    height: 20%;
-
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-
-    background: #CACCD5;
-    border-top: 2px solid #36BFED;
-    box-shadow: inset 0px 32px 54.4px #AFB0B5;
-}
-
-.buttonLeft {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0px;
-    width: fit-content;
-    height: 100%;
-}
-
-.containerLeft {
-    display: flex;
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
-    
-    position: relative;
-    width: 13vw;
-    height: 100%;
-
-    background: #d9d9d9;
-    border: 8px solid #bbbec4;
-    box-shadow: 4px 10px 12.7px rgba(0, 0, 0, 0.25), inset 0px -13px 24.4px rgba(0, 0, 0, 0.25), inset 0px 13px 15.4px rgba(0, 0, 0, 0.25);
-    border-left: 0px;
-}
-
-.containerLeft img {
-    position: absolute;
-    right: 0px;
-    top: 45%;
-    transform: translateY(-50%);
-
-    width: auto;
-    height: 100%;
-}
-
-.bottomBarText {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0px;
+}
+
+@font-face {
+    font-family: 'Encode Sans SemiBold';
+    src: url(EncodeSansCondensed-SemiBold.ttf);
+}
+
+.container {
+    position: relative;
+    width: 80vw;
+    max-height: 85vh;
+
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+}
+
+.screenFrame {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.screen {
+    position: absolute;
+    left: 8%;
+    top: 8%;
+
+    width: 83%;
+    height: 82%;
+    z-index: 8;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #0d130e;
+    container-type: inline-size;
+    overflow: hidden;
+
+    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 255, 65, 0.2);
+
+    margin: 0 auto;
+}
+
+.screen *{
+    filter: blur(0.3px);
+}
+
+.screenOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9;
+
+    background:
+        linear-gradient(180deg, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        radial-gradient(circle at center, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.5) 100%);
+    background-size: 100% 4px, 100% 100%;
+}
+
+.desktop {
+    width: 100%;
+    height: 100%;
+}
+
+.taskbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #D15C91;
+    width: 100%;
+    height: fit-content;
+    max-height: 5cqi;
+    gap: 0.5cqi;
+
+    margin: 0;
+    padding: 0;
+}
+
+.taskbarIcons {
+    display: flex;
+    flex-direction: row;
 
     width: fit-content;
-    height: fit-content;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0.5cqi;
+    gap: 0.5cqi;
 }
 
-.bottomBarText h1, h2, h3, h4, h5, p {
-    text-align: center;
-    margin: -2px;
+.taskbarIcons img {
+    width: 2.5cqi;
+    max-height: 100%;
 }
 
-.containerRight {
+.startButton {
     display: flex;
-    flex-direction: column-reverse;
-    border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
-    
-    position: relative;
-    width: 13vw;
-    height: 100%;
+    flex-direction: row;
 
-    background: #d9d9d9;
-    border: 8px solid #bbbec4;
-    box-shadow: 4px 10px 12.7px rgba(0, 0, 0, 0.25), inset 0px -13px 24.4px rgba(0, 0, 0, 0.25), inset 0px 13px 15.4px rgba(0, 0, 0, 0.25);
-    border-right: 0px;
+    height: 100%;
+    width: fit-content;
+    background-color: #4A9546;
+    border-top-right-radius: 16cqi;
+    border-bottom-right-radius: 16cqi;
+    padding: 0.8cqi;
+    gap: 0.4cqi;
+    box-sizing: border-box;
+    align-items: center;
 }
 
-.containerRight img {
-    position: absolute;
-    left: 0px;
-    top: 45%;
-    transform: translateY(-50%);
-
-    width: auto;
-    height: 100%;
+.startButton p {
+    font-family: 'Encode Sans SemiBold';
+    text-align: left;
+    font-size: 1.5cqi;
+    margin: 0;
+    color: #FFFAFC;
+}
+.startButton img {
+    width: 2.5cqi;
+    max-height: 100%;
 }
