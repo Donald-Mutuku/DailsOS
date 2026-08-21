@@ -3,13 +3,28 @@
     <head>
         <title>don OS X</title>
         <link rel="stylesheet" href="style.css">
-        <script src="cursor.js" defer></script>
+        <script src="script.js" defer></script>
     </head>
     <body>
         <div class="container">
             <div class="screen">
                 <div class="screenOverlay"></div>
-                <div class="desktop"></div>
+                <div class="desktop">
+                    <div class="window" id="window" style="width: 60cqi; height: 50cqi;">
+                        <div class="windowTitleBar" id="windowheader">
+                            <p>Welcome!</p>
+                        </div>
+                        <div class="welcomeContent">
+                            <img src="Poster.png" style="width: 40%; height: auto; aspect-ratio: 1.95 / 1;">
+                            <div style="display: flex; flex-direction: row; gap: 5cqi;">
+                                <div style="display: flex; flex-direction: column; gap: 1cqi;">
+                                    <p style="font-family: 'Encode Sans Bold'; font-size: 2.3cqi; margin: 0; width: 100%;">Welcome to the new don OS X!</p>
+                                    <p style="font-family: 'Encode Sans Regular'; font-size: 1.5cqi; margin: 0; width: 100%;">The greatest update to the OS that wishes it existed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
                 <div class="taskbar">
                     <div class="startButton">
                         <img src="icons/StartSymbol.svg">
@@ -19,10 +34,22 @@
                         <img src="icons/Mail.svg">
                         <img src="icons/Yuu.svg">
                     </div>
+                    <div style="width: 100%; height: fit-content;">
+                        <p style="width: 100%; text-align: right; font-family: 'Encode Sans SemiBold'; font-size: 1.7cqi; margin: 0; color: #FFFAFC; padding-right: 4cqi; box-sizing: border-box;" id="timeElement"></p>
+                    </div>
                 </div>
                 <div class="virtualCursor" id="virtualCursor"></div>
             </div>
             <img src="crt-monitor.png" class="screenFrame">
         </div>
+        <script>
+            var currentTime = new Date().toLocaleTimeString([], {
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: 'true'
+            }).toUpperCase();
+            var timeString = document.querySelector("#timeElement");
+            timeString.innerHTML = currentTime
+        </script>
     </body>
 </html>

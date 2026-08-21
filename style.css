@@ -1,3 +1,7 @@
+*{
+    user-select: none;
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -14,6 +18,16 @@ html, body {
 @font-face {
     font-family: 'Encode Sans SemiBold';
     src: url(fonts/EncodeSansCondensed-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'Encode Sans Bold';
+    src: url(fonts/EncodeSansCondensed-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Encode Sans Regular';
+    src: url(fonts/EncodeSansCondensed-Regular.ttf);
 }
 
 .container {
@@ -97,7 +111,6 @@ html, body {
     pointer-events: none;
     z-index: 7;
     display: none;
-    transform: translate(-50%, -50%);
 }
 
 .virtualCursor.point {
@@ -113,16 +126,70 @@ html, body {
 }
 
 .desktop {
+    display: block;
+
     width: 100%;
     height: 100%;
 
     background-image: url(bliss.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+    contain: layout;
+
+    container-type: inline-size;
 }
 
 .window {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
 
+    border: 0.3cqi solid #383034;
+    background-color: #FFFAFC;
+    
+    padding: 0;
+    gap: 0;
+    margin: 0;
+
+    z-index: 15;
+}
+
+.windowTitleBar {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    align-items: center;
+    
+    padding: 0 0.5cqi;
+    flex-shrink: 0;
+
+    background-color: #D15C91;
+    border-bottom: 0.1cqi solid #383034;
+    
+    width: 100%;
+    height: 3cqi;
+}
+
+.windowTitleBar p {
+    font-family: 'Encode Sans SemiBold';
+    font-size: 1.8cqi;
+    margin: 0;
+    color: #FFFAFC;
+
+    pointer-events: none;
+}
+
+.welcomeContent {
+    display: flex;
+    flex-direction: row;
+    
+    box-sizing: border-box;
+    padding: 2cqi;
+    gap: 2cqi;
+    width: 100%;
+    height: 100%;
 }
 
 .taskbar {
@@ -136,7 +203,7 @@ html, body {
     gap: 0.5cqi;
 
     margin: 0;
-    padding: 0;
+    padding-left: 4cqi;
 }
 
 .taskbarIcons {
@@ -163,7 +230,7 @@ html, body {
 
     height: 100%;
     width: fit-content;
-    background-color: #4A9546;
+    background-color: #3aa335;
     border-top-right-radius: 16cqi;
     border-bottom-right-radius: 16cqi;
     padding: 0.8cqi;
